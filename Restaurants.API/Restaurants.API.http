@@ -1,21 +1,20 @@
-# @host = http://localhost
-# @port = 5249
-# @Restaurants.API_HostAddress = {{host}}:{{port}}
+@host = http://localhost
+@port = 5249
+@Restaurants.API_HostAddress = {{host}}:{{port}}
 
-# GET {{Restaurants.API_HostAddress}}/api/weatherforecast/example
-# Accept: application/json
-# ProjectUrl: {{$projectUrl}}
-# Guid: {{$guid}}
-# LocalDate: {{$datetime iso8601}}
-# Random-int: {{$randomInt}}
+GET {{Restaurants.API_HostAddress}}/api/weatherforecast/23/example?max=15
+Accept: application/json
+ProjectUrl: {{$projectUrl}}
+Guid: {{$guid}}
+LocalDate: {{$datetime iso8601}}
+Random-int: {{$randomInt}}
 
 
-# #
-# POST {{Restaurants.API_HostAddress}}/api/weatherforecast
-# Content-Type: application/json
+###
 
-# {
-#   "email": "test@tes.com"
-# }
+POST {{Restaurants.API_HostAddress}}/api/weatherforecast
+Content-Type: application/json
+
+"Shimmy"
 
 
