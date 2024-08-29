@@ -18,22 +18,31 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet]
-    [Route("{take}/example")]
-    public IEnumerable<WeatherForecast> Get([FromQuery] int max, [FromRoute] int take)
+    [Route("example")]
+    public IEnumerable<WeatherForecast> Get()
     {
         var result = _weatherForecatService.Get();
         return result;
     }
+
+    [HttpGet]
+    [Route("{take}/currentDay")]
+    public IActionResult Get([FromQuery] int max, [FromRoute] int take)
+    {
+        var result = _weatherForecatService.Get().First();
+        //Response.StatusCode = 400;
+        return NotFound(result);
+    }
     // Passing parameters to the action
     // Data/Model binding [FromQuery] [FromRoute] -- source of param in the endpoint
     // same route action
-    [HttpGet("currentDay")]
+    //[HttpGet("currentDay")]
     //[Route("currentDay")]
-    public WeatherForecast GetCurrentForecast()
-    {
-        var result = _weatherForecatService.Get().First();
-        return result;
-    }
+    //public WeatherForecast GetCurrentForecast()
+    //{
+    //    var result = _weatherForecatService.Get().First();
+    //    return result;
+    //}
     [HttpPost]
     public string Hello([FromBody] string name)
     {
