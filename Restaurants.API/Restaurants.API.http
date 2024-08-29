@@ -1,6 +1,6 @@
 @host = http://localhost
 @port = 5249
-@Restaurants.API_HostAddress = {{host}}:{{port}}
+@Restaurants.API_HostAddress = https://localhost:7108
 
 GET {{Restaurants.API_HostAddress}}/api/weatherforecast/23/currentDay?max=11
 Accept: application/json
@@ -18,3 +18,13 @@ Content-Type: application/json
 "Shimmy"
 
 
+###
+POST {{Restaurants.API_HostAddress}}/api/weatherforecast/generate?count=5
+Content-Type: application/json
+
+{
+  "minTemperature": -23,
+  "maxTemperature": 23
+}
+
+###
