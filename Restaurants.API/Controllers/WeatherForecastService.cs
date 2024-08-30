@@ -1,13 +1,12 @@
 ﻿namespace Restaurants.API.Controllers
 {
-    public class WeatherForecatService : IWeatherForecatService
+    public class WeatherForecastService : IWeatherForecastService
     {
         private static readonly string[] Summaries = new[]
-{
+        {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-        public IEnumerable<WeatherForecast> Get(int count,
-            int minTemperature, int maxTemperature)
+        };
+        public IEnumerable<WeatherForecast> Get(int count, int minTemperature, int maxTemperature)
         {
             return Enumerable.Range(1, count).Select(index => new WeatherForecast
             {

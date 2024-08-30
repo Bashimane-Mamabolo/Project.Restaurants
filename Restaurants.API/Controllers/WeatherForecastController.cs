@@ -15,12 +15,12 @@ public class WeatherForecastController : ControllerBase
 {
 
     private readonly ILogger<WeatherForecastController> _logger;
-    private readonly IWeatherForecatService _weatherForecatService;
+    private readonly IWeatherForecastService _weatherForecastService;
     public WeatherForecastController(ILogger<WeatherForecastController> logger,
-        IWeatherForecatService weatherForecatService)
+        IWeatherForecastService weatherForecastService)
     {
         _logger = logger;
-        _weatherForecatService = weatherForecatService;
+        _weatherForecastService = weatherForecastService;
     }
 
     [HttpPost("generate")]
@@ -31,7 +31,7 @@ public class WeatherForecastController : ControllerBase
             return BadRequest("Count must be positive and Max temperature must be greater than Min temperature.");
         }
 
-        var result = _weatherForecatService.Get(count, request.minTemperature, request.maxTemperature);
+        var result = _weatherForecastService.Get(count, request.minTemperature, request.maxTemperature);
         return Ok(result);
     }
 }
