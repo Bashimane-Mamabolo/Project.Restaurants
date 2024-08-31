@@ -16,7 +16,7 @@ public class RestaurantDto
     // Adress properties //flattened
     public string? City { get; set; }
     public string? Street { get; set; }
-    public int? PostalCode { get; set; }
+    public string? PostalCode { get; set; }
 
     // Dish properties dto
     public List<DishDto> Dishes { get; set; } = [];

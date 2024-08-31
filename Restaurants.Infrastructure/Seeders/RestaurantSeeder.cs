@@ -35,7 +35,7 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
                 {
                     City = "New York",
                     Street = "123 Main St",
-                    PostalCode = 10001
+                    PostalCode = "10001"
                 },
                 Dishes = new List<Dish>
                 {
@@ -55,7 +55,7 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
                 {
                     City = "Los Angeles",
                     Street = "456 Broadway Ave",
-                    PostalCode = 90001
+                    PostalCode = "90001"
                 },
                 Dishes = new List<Dish>
                 {
