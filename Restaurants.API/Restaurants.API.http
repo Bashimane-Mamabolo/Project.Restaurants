@@ -10,3 +10,21 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 GET {{Restaurants.API_HostAddress}}/api/restaurants/1
 
 ###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+{
+  "name": "New Restaurant",
+  "description": "A great place to eat",
+  "category": "Italian",
+  "hasDelivery": true,
+  "contactEmail": "contact@newrestaurant.com",
+  "contactNumber": "123-456-7890",
+  "city": "New York",
+  "street": "123 Main St",
+  "postalCode": "10001"
+}
+
+###
+
+GET https://localhost:7108/api/restaurants/5
