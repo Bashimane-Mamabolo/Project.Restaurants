@@ -1,3 +1,4 @@
+using Restaurants.API.Middlewares;
 using Restaurants.Application.Extensions;
 using Restaurants.Infrastructure.Extensions;
 using Restaurants.Infrastructure.Seeders;
@@ -10,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<ErrorHandlingMiddle>();
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -31,7 +34,10 @@ catch (Exception ex)
     Log.Error(ex, "An error occurred during seeding.");
 }
 
+// Middleware
 // Configure the HTTP request pipeline.
+app.UseMiddleware<ErrorHandlingMiddle>();
+
 app.UseSerilogRequestLogging();
 if (app.Environment.IsDevelopment())
 {
