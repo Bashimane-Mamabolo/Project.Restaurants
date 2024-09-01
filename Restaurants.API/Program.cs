@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<ErrorHandlingMiddle>();
+builder.Services.AddScoped<ErrorHandlingMiddleware>();
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -36,7 +36,7 @@ catch (Exception ex)
 
 // Middleware
 // Configure the HTTP request pipeline.
-app.UseMiddleware<ErrorHandlingMiddle>();
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseSerilogRequestLogging();
 if (app.Environment.IsDevelopment())
