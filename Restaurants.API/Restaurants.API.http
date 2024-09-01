@@ -33,3 +33,16 @@ GET https://localhost:7108/api/restaurants/20
 ###
 
 DELETE {{Restaurants.API_HostAddress}}/api/restaurants/5
+
+###
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/16
+Content-Type: application/json
+
+{
+  "Name": "Updated Restaurant Name",
+  "Description": "Updated description",
+  "HasDelivery": true
+}
+
+###
