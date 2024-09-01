@@ -15,7 +15,7 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-  "Name": "Dijon",
+  "Name": "Teste",
   "Description": "A great place to eat",
   "Category": "Indian",
   "HasDelivery": true,
@@ -40,9 +40,9 @@ PATCH {{Restaurants.API_HostAddress}}/api/restaurants/16
 Content-Type: application/json
 
 {
-  "Name": "Updated Restaurant Name",
-  "Description": "Updated description",
-  "HasDelivery": true
+  "Name": "sample patch2",
+  "Description": "Restu description",
+  "HasDelivery": false
 }
 
 ###
