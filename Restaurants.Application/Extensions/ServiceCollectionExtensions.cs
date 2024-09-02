@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Restaurants.Application.Restaurants;
 using Restaurants.Application.Restaurants.Commands.CreateRestaurant;
 using Restaurants.Application.Restaurants.Dtos;
+using Restaurants.Application.User;
 namespace Restaurants.Application.Extensions;
 
 public static class ServiceCollectionExtensions
@@ -22,5 +23,10 @@ public static class ServiceCollectionExtensions
 
         // Enable FluentValidation's automatic model validation
         services.AddFluentValidationAutoValidation();
+
+        services.AddScoped<IUserContext, UserContext>();
+
+        services.AddHttpContextAccessor();
+
     }
 }
