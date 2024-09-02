@@ -72,3 +72,23 @@ DELETE {{Restaurants.API_HostAddress}}/api/restaurants/49/dishes
 ###
 
 GET https://localhost:7108/api/restaurants/4/dishes/6
+
+###
+
+POST {{Restaurants.API_HostAddress}}/register
+Content-Type: application/json
+
+{
+    "email": "testuser@test.com",
+    "password": "Test@123"
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/login
+Content-Type: application/json
+
+{
+    "email": "testuser@test.com",
+    "password": "Test"
+}
